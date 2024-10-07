@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Employee Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body>
+    <main class="p-6 bg-gray-100">
+      <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+        <h2 class="text-2xl font-semibold mb-6">Add Employee</h2>
+        <form id="employeeForm" class="space-y-4">
+          <div
+            class="flex flex-col md:flex-row items-start gap-3 md:gap-5 lg:gap-8"
+          >
+            <!-- Profile Photo Upload -->
+            <div class="flex items-center justify-center mb-4 mt-6">
+              <label for="profilePhoto" class="cursor-pointer">
+                <div
+                  class="w-full h-full bg-gray-100 border-2 border-dashed border-gray-300 rounded-xl flex flex-col items-center justify-center hover:bg-gray-200 transition p-14"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-12 h-12 text-gray-400"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 15a4 4 0 01.88-7.906A6 6 0 0118.118 8H19a5 5 0 11-.8 9.9M3 15h9m0 0l-3-3m3 3l3-3"
+                    />
+                  </svg>
+                  <span class="mt-2 text-sm text-gray-600"
+                    >Upload Profile Photo</span
+                  >
+                </div>
+              </label>
+              <input id="profilePhoto" type="file" class="hidden" />
+            </div>
+            <!-- Employee Details -->
+            <div class="flex-1 w-full grid gap-2">
+              <div>
+                <label class="block mb-1 text-gray-600">First Name</label>
+                <input
+                  id="firstName"
+                  type="text"
+                  class="w-full border border-gray-300 p-2 rounded"
+                  placeholder="Enter First Name"
+                />
+              </div>
+              <div>
+                <label class="block mb-1 text-gray-600">Last Name</label>
+                <input
+                  id="lastName"
+                  type="text"
+                  class="w-full border border-gray-300 p-2 rounded"
+                  placeholder="Enter Last Name"
+                />
+              </div>
+              <div>
+                <label class="block mb-1 text-gray-600">ID</label>
+                <input
+                  id="employeeID"
+                  type="text"
+                  class="w-full border border-gray-300 p-2 rounded"
+                  placeholder="Enter ID"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Next Employee Details -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <div>
+              <label class="block mb-1 text-gray-600">Email</label>
+              <input
+                id="email"
+                type="email"
+                class="w-full border border-gray-300 p-2 rounded"
+                placeholder="Enter Email"
+              />
+            </div>
+            <div>
+              <label class="block mb-1 text-gray-600">Phone Number</label>
+              <input
+                id="phoneNumber"
+                type="text"
+                class="w-full border border-gray-300 p-2 rounded"
+                placeholder="Enter Number"
+              />
+            </div>
+            <div>
+              <label class="block mb-1 text-gray-600">Department</label>
+              <select
+                id="department"
+                class="w-full border border-gray-300 p-2 rounded"
+              >
+                <option>Select Department</option>
+                <option>Human Resources</option>
+                <option>Finance</option>
+                <option>Marketing</option>
+                <option>Sales</option>
+                <option>IT</option>
+              </select>
+            </div>
+            <div>
+              <label class="block mb-1 text-gray-600">Designation</label>
+              <select
+                id="designation"
+                class="w-full border border-gray-300 p-2 rounded"
+              >
+                <option>Select Designation</option>
+                <option>Customer Support</option>
+                <option>Research and Development</option>
+                <option>Operations</option>
+                <option>Legal</option>
+                <option>Procurement</option>
+                <option>Administration</option>
+              </select>
+            </div>
+            <div>
+              <label class="block mb-1 text-gray-600">Gender</label>
+              <select
+                id="gender"
+                class="w-full border border-gray-300 p-2 rounded"
+              >
+                <option>Select Gender</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div>
+              <label class="block mb-1 text-gray-600">Date of Birth</label>
+              <input
+                id="dob"
+                type="date"
+                class="w-full border border-gray-300 p-2 rounded"
+              />
+            </div>
+            <div>
+              <label class="block mb-1 text-gray-600">About me</label>
+              <textarea
+                id="aboutMe"
+                class="w-full border border-gray-300 p-2 rounded"
+                rows="1"
+                placeholder="Enter about me"
+              ></textarea>
+            </div>
+            <div>
+              <label class="block mb-1 text-gray-600">Employee Status</label>
+              <select
+                id="employeeStatus"
+                class="w-full border border-gray-300 p-2 rounded"
+              >
+                <option>Select Status</option>
+                <option>Employee</option>
+                <option>Contractor</option>
+                <option>Intern</option>
+                <option>Retired</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Buttons -->
+          <div class="flex justify-end space-x-2 mt-6">
+            <button
+              type="button"
+              class="bg-gray-400 text-white py-2 w-full rounded hover:bg-gray-500"
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+              class="bg-blue-600 text-white py-2 w-full rounded hover:bg-blue-700"
+            >
+              Save
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <!-- JS File -->
+    <script src="./index.js"></script>
+  </body>
+</html>
