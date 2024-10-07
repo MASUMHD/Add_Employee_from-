@@ -1,3 +1,4 @@
+// from data to console
 document.getElementById('employeeForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -18,3 +19,24 @@ document.getElementById('employeeForm').addEventListener('submit', function(even
 
     console.log(employeeData);
 });
+
+
+// Image Show function.....
+function previewImage() {
+    const input = document.getElementById('profilePhoto');
+    const imagePreview = document.getElementById('imagePreview');
+    const uploadArea = document.getElementById('uploadArea');
+
+    if (input.files && input.files[0]) {
+      const reader = new FileReader();
+  
+      reader.onload = function (e) {
+        imagePreview.src = e.target.result;
+        imagePreview.classList.remove('hidden');
+        uploadArea.classList.add('hidden'); 
+      };
+  
+      reader.readAsDataURL(input.files[0]);
+    }
+}
+  
